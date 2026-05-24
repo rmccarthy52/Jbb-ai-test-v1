@@ -20,9 +20,9 @@ export default function ResultsScreen({ results, totalScore, maxScore, onPlayAga
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      padding: '40px 20px',
+      padding: 'env(safe-area-inset-top, 40px) 20px env(safe-area-inset-bottom, 40px)',
       gap: 32,
-      minHeight: '100vh',
+      minHeight: '100dvh',
       background: 'var(--bg)',
     }}>
       <div style={{ textAlign: 'center' }}>

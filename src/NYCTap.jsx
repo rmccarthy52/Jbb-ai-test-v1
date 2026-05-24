@@ -93,7 +93,7 @@ export default function NYCTap() {
     <div style={{
       display: 'flex',
       flexDirection: 'column',
-      height: '100vh',
+      height: '100dvh',   /* dvh accounts for mobile browser chrome */
       overflow: 'hidden',
     }}>
       {/* Header */}
@@ -119,7 +119,7 @@ export default function NYCTap() {
         </span>
       </header>
 
-      {/* Map */}
+      {/* Map — takes all remaining space above the panel */}
       <MapCanvas
         onGuess={handleGuess}
         guessLatLng={state.guess}
@@ -127,15 +127,18 @@ export default function NYCTap() {
         submitted={state.submitted}
       />
 
-      {/* Bottom panel */}
+      {/* Bottom panel — capped so it never crowds the map */}
       <div style={{
         flexShrink: 0,
         display: 'flex',
         flexDirection: 'column',
         gap: 8,
         padding: 12,
+        paddingBottom: 'max(12px, env(safe-area-inset-bottom))',
         background: 'var(--bg)',
         borderTop: '1px solid var(--border)',
+        maxHeight: '42vh',
+        overflowY: 'auto',
       }}>
         <ClueCard
           location={location}
@@ -184,7 +187,7 @@ function SplashScreen({ onStart }) {
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
-      height: '100vh',
+      height: '100dvh',
       gap: 24,
       padding: 32,
       background: 'var(--bg)',
