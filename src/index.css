@@ -1,0 +1,49 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg:           #0a0a0f;
+  --surface:      #13131a;
+  --border:       #1a1a25;
+  --text:         #e8e0d0;
+  --muted:        #555;
+  --gold:         #F59E0B;
+  --blue:         #3B82F6;
+  --font-display: 'Times New Roman', serif;
+  --font-body:    'Georgia', serif;
+}
+
+html, body, #root {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+/* Leaflet overrides — keep map tiles dark-border-neutral */
+.leaflet-container {
+  background: #1a1a25;
+  font-family: var(--font-body);
+}
+
+.leaflet-tile-pane {
+  filter: grayscale(30%) brightness(0.85);
+}
+
+.leaflet-control-attribution {
+  background: rgba(10, 10, 15, 0.7) !important;
+  color: var(--muted) !important;
+  font-size: 10px;
+}
+
+.leaflet-control-attribution a {
+  color: var(--muted) !important;
+}
